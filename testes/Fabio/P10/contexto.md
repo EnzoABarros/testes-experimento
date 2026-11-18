@@ -1,52 +1,19 @@
-# P1 — Agendamento de tarefas com dependências
+Tô precisando de uma função em Python pra organizar uma lista de tarefas de um projeto.
 
-Implemente, em Python, uma função:
+Eu tenho várias tarefas e algumas dependem de outras. Por exemplo, pra fazer o deploy eu preciso primeiro terminar o build, e pra fazer o build preciso terminar a compilação. Queria passar essas informações pra função e receber de volta a ordem em que as tarefas devem ser feitas.
 
-    agendar_tarefas(tarefas: dict[str, list[str]]) -> list[str]
+Pode fazer uma função chamada `agendar_tarefas(tarefas)`.
 
-O parâmetro `tarefas` representa um conjunto de tarefas e suas dependências.
-A chave é o identificador de uma tarefa e o valor é a lista de tarefas que
-precisam ser concluídas antes dela.
+O `tarefas` vai ser um dicionário, onde cada chave é o nome de uma tarefa e o valor é uma lista com as tarefas que precisam ser feitas antes dela. Nem toda tarefa precisa necessariamente aparecer como chave, porque ela pode aparecer só como dependência de outra.
 
-Requisitos:
+A função precisa devolver uma lista com todas as tarefas na ordem correta, sem colocar uma tarefa antes de alguma coisa que ela depende.
 
-1. Todas as tarefas mencionadas como chaves ou como dependências devem fazer
-   parte do conjunto de tarefas considerado.
-2. A função deve retornar uma lista contendo todas as tarefas em uma ordem
-   válida de execução, de forma que nenhuma tarefa apareça antes de uma de
-   suas dependências.
-3. Quando houver mais de uma ordem válida, use como critério de desempate a
-   ordem lexicográfica dos identificadores disponíveis naquele momento.
-4. Se houver dependências circulares, a função deve lançar `ValueError`.
-5. Uma tarefa pode aparecer como dependência de várias outras tarefas.
-6. Não modifique o dicionário recebido pela função.
-7. A função deve funcionar também quando `tarefas` estiver vazio, retornando
-   uma lista vazia.
-8. A implementação deve ser determinística.
+Tem uma coisa importante: se tiver mais de uma tarefa disponível pra fazer ao mesmo tempo, quero que você escolha primeiro a que vem antes em ordem alfabética. Isso precisa deixar o resultado sempre previsível.
 
-Exemplo:
+Também preciso que a função perceba quando existe um ciclo de dependências. Por exemplo, se A depende de B, B depende de C e C depende de A, não existe uma ordem possível. Nesse caso, pode lançar um `ValueError`.
 
-    {
-        "compilar": ["testar"],
-        "testar": ["implementar"],
-        "implementar": []
-    }
+Se não tiver nenhuma tarefa, deve retornar uma lista vazia.
 
-deve produzir:
+Também não quero que a função altere o dicionário original que eu passei pra ela.
 
-    ["implementar", "testar", "compilar"]
-
-Outro exemplo:
-
-    {
-        "B": [],
-        "A": [],
-        "C": ["A", "B"]
-    }
-
-deve produzir:
-
-    ["A", "B", "C"]
-
-Não é necessário criar interface gráfica, ler arquivos ou receber entrada
-pelo terminal. Implemente somente a função solicitada.
+Por enquanto não precisa criar interface, ler arquivo ou nada disso. Só preciso da função em Python mesmo.
