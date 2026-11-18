@@ -1,45 +1,17 @@
-# P2 — Cache LRU com capacidade e estatísticas
+Estou precisando de um código em Python para guardar algumas informações temporariamente, como se fosse uma memória que tem espaço limitado.
 
-Implemente, em Python, uma classe:
+A ideia é que eu consiga guardar informações usando um nome ou identificador e depois consultar essas informações quando precisar.
 
-    LRUCache
+O espaço disponível será limitado. Por exemplo, se eu tiver espaço para guardar apenas 3 informações e tentar adicionar uma quarta, o sistema deve apagar automaticamente aquela que faz mais tempo que não é consultada, mantendo as outras.
 
-Ela representa um cache com política Least Recently Used (LRU).
+Sempre que eu consultar uma informação, ela deve ser considerada como recentemente utilizada. Da mesma forma, se eu adicionar novamente uma informação que já existe, o conteúdo antigo deve ser substituído e ela deve passar a ser considerada uma das mais recentes.
 
-A classe deve possuir:
+Se eu tentar consultar algo que não foi guardado, o sistema simplesmente deve informar que não encontrou aquela informação.
 
-    LRUCache(capacidade: int)
+Também preciso conseguir descobrir quantas informações estão guardadas no momento.
 
-e os métodos:
+O espaço disponível deve ser definido quando o sistema for criado e precisa ser maior que zero. Caso alguém tente criar o sistema sem espaço disponível ou com um valor inválido, deve apresentar um erro.
 
-    get(chave)
-    put(chave, valor)
-    __len__()
+Quero que isso funcione de maneira eficiente, mesmo quando houver muitas informações armazenadas.
 
-Requisitos:
-
-1. `capacidade` deve ser um inteiro positivo. Caso contrário, o construtor
-   deve lançar `ValueError`.
-2. `get(chave)` deve retornar o valor associado à chave quando ela estiver
-   presente.
-3. Um `get` de uma chave existente torna essa chave a mais recentemente usada.
-4. Quando a chave não existir, `get` deve retornar `None` e não deve alterar
-   a ordem das demais chaves.
-5. `put(chave, valor)` deve inserir uma nova chave ou atualizar uma chave
-   existente.
-6. Um `put` de uma chave existente deve substituir seu valor e tornar essa
-   chave a mais recentemente usada.
-7. Se a inserção fizer o número de itens ultrapassar a capacidade, remova
-   exatamente a chave menos recentemente usada.
-8. A classe deve manter a ordem de uso corretamente após qualquer combinação
-   de `get` e `put`.
-9. `len(cache)` deve retornar o número atual de itens armazenados.
-10. A capacidade deve permanecer fixa durante toda a vida do objeto.
-11. A implementação deve aceitar qualquer objeto hashable como chave e
-    qualquer objeto como valor.
-12. Não utilize uma biblioteca externa para implementar a política LRU.
-13. A complexidade de `get` e `put` deve ser O(1) amortizado.
-14. A classe deve funcionar corretamente com capacidade igual a 1.
-
-Não é necessário criar interface gráfica, ler arquivos ou receber entrada
-pelo terminal. Implemente somente a classe solicitada.
+Gere o código em Python para resolver esse problema. Não precisa criar interface gráfica, salvar informações em arquivos ou implementar interação pelo terminal.
