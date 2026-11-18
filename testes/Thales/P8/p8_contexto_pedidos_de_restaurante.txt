@@ -1,0 +1,9 @@
+Nome do Problema: Sistema de Gerenciamento de Pedidos de Restaurante
+
+Um restaurante deseja implementar um programa para organizar os pedidos realizados pelos clientes e acompanhar o processo de preparação dos pratos. Atualmente, os pedidos são anotados manualmente, ocasionando dificuldades para controlar os itens solicitados, calcular os valores das comandas e acompanhar quais pedidos ainda estão em preparação.
+
+O programa deve permitir cadastrar produtos disponíveis no cardápio, registrar pedidos, adicionar e remover itens de pedidos existentes, atualizar o estado de preparação e consultar o valor total de cada pedido. Também deve ser possível identificar os pedidos pendentes, em preparação, prontos e finalizados.
+
+Cada produto deve possuir um identificador único, nome e preço. Cada pedido deve possuir um identificador, uma lista de produtos com suas respectivas quantidades e um estado de atendimento. Os estados possíveis devem seguir uma sequência lógica, na qual um pedido inicialmente registrado esteja pendente, possa passar para preparação, posteriormente para pronto e finalmente para finalizado. Não devem ser permitidas alterações inválidas nessa sequência. Produtos inexistentes não podem ser adicionados aos pedidos, e as quantidades solicitadas devem ser positivas. O valor total deve considerar os preços dos produtos e suas respectivas quantidades.
+
+Espera-se obter um programa que permita gerenciar os pedidos do restaurante de maneira organizada, acompanhar o andamento de cada solicitação e calcular corretamente os valores das comandas, mantendo a consistência das informações durante todas as operações.

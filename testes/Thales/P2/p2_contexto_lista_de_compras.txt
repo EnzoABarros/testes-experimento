@@ -1,0 +1,9 @@
+Nome do Problema: Sistema de Gerenciamento de Lista de Compras
+
+Uma pessoa deseja desenvolver um programa para organizar suas compras de supermercado. Atualmente, os produtos são anotados manualmente, dificultando o controle dos itens que já foram adquiridos, das quantidades necessárias e do valor total estimado da compra.
+
+O programa deve permitir adicionar produtos à lista de compras, remover itens, atualizar suas quantidades e preços, consultar os produtos cadastrados e calcular o valor total estimado da compra. Também deve ser possível marcar produtos como comprados e consultar separadamente os itens pendentes e os já adquiridos.
+
+Cada produto deve possuir um identificador único, nome, quantidade, preço unitário e uma indicação de compra realizada ou pendente. Não devem ser permitidos produtos duplicados, quantidades negativas ou preços inferiores a zero. A remoção de um produto deve ser possível somente quando ele estiver cadastrado na lista.
+
+Espera-se obter um programa que facilite a organização das compras, permita acompanhar os produtos adquiridos e apresente corretamente o valor total estimado dos itens, considerando suas quantidades e preços unitários.

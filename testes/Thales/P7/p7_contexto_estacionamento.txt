@@ -1,0 +1,9 @@
+Nome do Problema: Sistema de Gerenciamento de Estacionamento
+
+Um estabelecimento comercial possui um estacionamento com vagas limitadas e necessita de um programa para controlar a entrada e saída dos veículos. Atualmente, o controle é realizado manualmente, o que dificulta identificar vagas disponíveis, acompanhar o tempo de permanência dos veículos e calcular os valores cobrados.
+
+O programa deve permitir registrar a entrada de veículos, registrar suas saídas, consultar as vagas disponíveis e identificar quais veículos estão estacionados. Também deve calcular o valor a ser cobrado de acordo com o tempo de permanência e disponibilizar um histórico das movimentações realizadas.
+
+O estacionamento possui uma quantidade máxima de vagas, sendo permitido apenas um veículo por vaga. Cada veículo deve possuir uma placa única e um horário de entrada. O sistema deve impedir a entrada de veículos quando não houver vagas disponíveis, assim como impedir o registro de saída de veículos que não estejam estacionados. A cobrança deve considerar períodos de uma hora, sendo que qualquer fração adicional de hora deverá ser cobrada como uma hora completa. O valor por hora deve ser configurável.
+
+Espera-se obter um programa capaz de controlar a ocupação do estacionamento, evitar registros inconsistentes, calcular corretamente os valores das permanências e disponibilizar informações atualizadas sobre a utilização das vagas.
